@@ -63,6 +63,27 @@ def hex2str(s):
     return bytes.fromhex(s)
 
 
+def gmult(a, b):
+    """
+    Multiplication of GF(2^8)
+    Reference: https://en.wikipedia.org/wiki/Finite_field_arithmetic#Rijndael's_(AES)_finite_field
+
+    :param a:  Integer a --> int
+    :param b:  Integer b --> int
+    :return:  Multiplication result --> int
+    """
+    p = 0
+    while a and b:
+        if b & 0x1:
+            p ^= a  # since we're in GF(2^m), addition is an XOR
+        if a & 0x80:
+            a = (a << 1) ^ 0x11b
+        else:
+            a <<= 1
+        b >>= 1
+    return p
+
+
 def gaussian_elimination(A):
     """
     Solve m-unknown equations with gaussian elimination
