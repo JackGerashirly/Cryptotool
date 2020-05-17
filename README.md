@@ -20,3 +20,8 @@ A Cryptography newbie, still trying to accomplish the repository.
 
 
 ## AES -- Doing
+* Implement -- Done
+* Different Modes -- Doing
+
+
+
