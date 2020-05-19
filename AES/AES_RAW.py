@@ -5,7 +5,7 @@
 from w366er_tool.Util import gmult
 """
 Description:
-1. Implement of normal AES-128, AES-192, AES-256
+1. Implement of raw AES-128, AES-192, AES-256
 2. Including:
     1. Key Addition
     2. Bytes Substitution(S-box)
@@ -14,7 +14,7 @@ Description:
 """
 
 
-class AES:
+class new:
     def __init__(self):
         self.round_key_box = []
         self.s_box = [[0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76],
@@ -192,7 +192,11 @@ class AES:
         """
         # check key length
         if len(key) not in [16, 24, 32]:
-            raise ValueError("Invalid key length")
+            raise ValueError("Invalid key length!")
+
+        # check plaintext length
+        if len(plain_text) != 16:
+            raise ValueError("Invalid plaintext length!")
 
         # Calculate number of rounds
         number_of_rounds = {16: 10, 24: 12, 32: 14}
@@ -233,7 +237,11 @@ class AES:
         """
         # check key length
         if len(key) not in [16, 24, 32]:
-            raise ValueError("Invalid key length")
+            raise ValueError("Invalid key length!")
+
+        # check plaintext length
+        if len(cipher) != 16:
+            raise ValueError("Invalid plaintext length!")
 
         # Calculate number of rounds
         number_of_rounds = {16: 10, 24: 12, 32: 14}
@@ -272,7 +280,7 @@ plain_text = b'2C\xf6\xa8\x88Z0\x8d11\x98\xa2\xe07\x074'  # bytes format
 
 key = b'+~\x15\x16(\xae\xd2\xa6\xab\xf7\x15\x88\t\xcfO<'
 # 2b7e151628aed2a6abf7158809cf4f3c
-me = AES()
+me = new()
 cipher = me.encrypt(plain_text, key)  # check pass
 print(cipher)
 print(me.decrypt(cipher, key))
@@ -283,7 +291,7 @@ print(me.decrypt(cipher, key))
 if __name__ == '__main__':
     gui = """
             ------------------------------------
-            |   # AES Cipher ECB_MODE GUI(2020)|
+            |   # AES Cipher GUI(2020)         |
             |   Options:                       |
             |   1. Encrypt                     |
             |   2. Decrypt                     |
@@ -298,13 +306,13 @@ Input your selection: """
         if selection == '1':
             plaintext = input("Input your plaintext(str): \n").strip().encode()  # input only accepts string
             key = input("Input your key(str): \n").strip().encode()
-            sys = AES()
+            sys = new()
             print("Your Result:", sys.encrypt(plaintext, key))  # return bytes format
             print("____________________________________________")
         elif selection == '2':
             cipher = input("Input your cipher(str): \n").strip().encode()
             key = input("Input your key(str): \n").strip().encode()
-            sys = AES()
+            sys = new()
             print("Your Result:", sys.decrypt(cipher, key))
             print("____________________________________________")
         elif selection == '3':
@@ -312,4 +320,3 @@ Input your selection: """
             exit(0)
         else:
             exit("Invalid string!")
-
