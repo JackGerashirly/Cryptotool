@@ -17,11 +17,15 @@ A Cryptography newbie, still trying to accomplish the repository.
 
 ## DES -- Done
 * Implement
+* Different Modes -- Later
 
 
-## AES -- Doing
+## AES -- Done
 * Implement -- Done
-* Different Modes -- Doing
+* Different Modes -- Done
+
+## RSA -- Doing
+* Implement -- Doing
 
 
 
