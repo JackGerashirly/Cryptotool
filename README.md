@@ -34,7 +34,7 @@ A Cryptography newbie, still trying to accomplish the repository.
 * Implement -- Doing
 
 
-# DLP Attack Method -- Doing
+## DLP Attack Method -- Doing
 
 
 
