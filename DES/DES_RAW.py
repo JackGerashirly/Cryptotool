@@ -16,7 +16,7 @@ Description:
 """
 
 
-class DES:
+class new:
     def __init__(self, key):
         self.key_box = []
         self.shift_box = [1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1]
@@ -363,12 +363,12 @@ Input your selection: """
         if selection == '1':
             plaintext = input("Input your plaintext in hex: \n").strip()
             key = input("Input your key in hex: \n").strip()
-            print("Your Result: ", DES(key).encrypt(plaintext))
+            print("Your Result: ", new(key).encrypt(plaintext))
             print("____________________________________________")
         elif selection == '2':
             cipher = input("Input your cipher in hex: \n").strip()
             key = input("Input your key in hex: \n").strip()
-            print("Your Result: ", DES(key).decrypt(cipher))
+            print("Your Result: ", new(key).decrypt(cipher))
             print("____________________________________________")
         elif selection == '3':
             print("Exit!")
@@ -382,11 +382,3 @@ Input your selection: """
 # Plaintext: 123456ABCD132536
 # Cipher: c0b7a8d05f3a829c
 
-
-# Test2:
-# m = b"desisbad"
-# key = b"Imnotkey"
-# output:
-# Please input your key in Hex: 496d6e6f746b6579
-# Please input your plaintext in Hex: 6465736973626164
-# 0e322362f9d4e505
