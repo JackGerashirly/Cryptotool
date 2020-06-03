@@ -19,13 +19,22 @@ A Cryptography newbie, still trying to accomplish the repository.
 * Implement
 * Different Modes -- Later
 
-
 ## AES -- Done
-* Implement -- Done
-* Different Modes -- Done
+* Implement
+* Different Modes
 
-## RSA -- Doing
+## RSA -- Done
+* Implement
+* Common attack methods -- Later
+
+## Elgamal -- Done
+* Implement
+
+## ECC -- Doing
 * Implement -- Doing
+
+
+# DLP Attack Method -- Doing
 
 
 
