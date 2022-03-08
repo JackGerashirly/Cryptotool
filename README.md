@@ -1,40 +1,38 @@
 # Cryptotool
-Tools in Cryptography
 
-A Cryptography newbie, still trying to accomplish the repository.
+自己实现的一些密码算法。Still a noob anyway.
 
-## Shift Cipher(Caeser Cipher) -- Done
+## Shift Cipher(Caeser Cipher)
 * Implement
 * Common attack methods
 
-## Affine Cipher -- Done
+## Vingenere Cipher
 * Implement
 * Common attack methods
 
-## Stream Cipher -- Done
+## Affine Cipher
+* Implement
+* Common attack methods
+
+## Stream Cipher
 * Implement with LFSR
 * leak plaintext attack
 
-## DES -- Done
+## DES
 * Implement
-* Different Modes -- Later
 
-## AES -- Done
+## AES
 * Implement
 * Different Modes
 
-## RSA -- Done
-* Implement
-* Common attack methods -- Later
-
-## Elgamal -- Done
+## RSA
 * Implement
 
-## ECC -- Doing
-* Implement -- Doing
+## Elgamal
+* Implement
 
-
-## DLP Attack Method -- Doing
+## SM4
+* Implement
 
 
 

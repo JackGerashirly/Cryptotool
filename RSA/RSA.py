@@ -16,7 +16,7 @@ Description:
 """
 
 
-class RSA:
+class new:
     q = 0
     p = 0
     e = 0
@@ -41,18 +41,13 @@ class RSA:
             self.q = Util.get_prime(512)
             self.n = self.p * self.q
             phi = (self.p - 1) * (self.q - 1)
-            if e == 0:
-                while 1:
-                    e = random.randint(2, phi-1)
-                    if math.gcd(e, phi) == 1:
-                        break
-            self.e = e
-            self.d = Util.extend_euclidean_algorithm(e, phi)[0] % phi
+            self.e = 65537
+            self.d = Util.extend_euclidean_algorithm(self.e, phi)[0] % phi
             if show:
                 print("RSAkey: ")
                 print("n: ", self.n)
                 print("e: ", self.e)
-                print("d: ", self.d)
+                print("d: ", self.d) # fix here
                 print("p: ", self.p)
                 print("q: ", self.q)
         else:

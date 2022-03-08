@@ -3,6 +3,7 @@
 # Author: w366er
 import math
 import random
+from sympy.ntheory import discrete_log
 
 """
 Description:
@@ -11,6 +12,11 @@ Description:
     2. str2bin and bin2str
     3. str2hex and hex2str
     4. Gaussian Elimination
+    5. bytes_to_long and long_to_bytes
+    6. extend_euclidean_algorithm
+    7. gmult
+    8. mod_exponential_by_square
+    9. ...
 """
 
 
@@ -330,11 +336,38 @@ def get_prime(n):
     """
     Generate prime numbers
 
-        :param n: the bits of the prime number  --> int
-        :return: prime number --> int
-        """
+    :param n: the bits of the prime number  --> int
+    :return: prime number --> int
+    """
+
     while 1:
         a = random.getrandbits(n)
         if a & 1 != 0:
             if miller_rabin_primality_test(a):
                 return a
+
+
+def gcd(a, b):  # check pass
+    """
+    Calculate the greatest common divisor of a and b
+    
+    :param a: integer a --> int 
+    :param b: integer b --> int
+    :return: greatest common divisor of a and b --> int
+    """
+
+    return extend_euclidean_algorithm(a,b)[2]
+
+
+def invert(a, b):  # check pass
+    """
+    Calculate invert(a,b)
+
+    :param a: integer a --> int
+    :param b: integer b --> int
+    :return: the inverse of a modulus b
+    """
+
+    return extend_euclidean_algorithm(a,b)[0] % b
+
+

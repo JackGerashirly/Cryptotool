@@ -18,7 +18,7 @@ Descriptions:
 
 def brute_force_attack(cipher):
     for i in range(0, 26):
-        print("shift = ", i)
+        print("shift = ", 26 - i)
         for p in cipher:
             if ord("a") <= ord(p) <= ord("z"):
                 print(chr(ord("a") + (ord(p) - ord("a") + i) % 26), end="")
